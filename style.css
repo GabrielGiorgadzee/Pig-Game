@@ -14,31 +14,30 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  min-height: 100vh;
+  height: 100vh;
   color: #333;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
 }
 
 main {
   position: relative;
-  width: 95%;
-  max-width: 100rem;
+  width: 100rem;
+  height: 60rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
+  filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
   border-radius: 9px;
   overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .player {
-  flex: 1 1 50%;
-  padding: 6rem;
+  flex: 50%;
+  padding: 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +45,7 @@ main {
 }
 
 .name {
+  position: relative;
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -70,6 +70,7 @@ main {
 .player--active .score {
   font-weight: 400;
 }
+
 .player--active .current {
   opacity: 1;
 }
@@ -96,16 +97,10 @@ main {
   font-size: 3.5rem;
 }
 
-.controls {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
 .btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   color: #444;
   background: none;
   border: none;
@@ -115,13 +110,12 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
+  background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 300px;
 }
 
 .btn::first-letter {
@@ -130,23 +124,38 @@ main {
   margin-right: 0.7rem;
 }
 
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
 .btn:active {
-  transform: translateY(3px);
+  transform: translate(-50%, 3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
+
 .btn:focus {
   outline: none;
 }
 
 .dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
   height: 10rem;
-  max-width: 100%;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
 
 .player--winner {
   background-color: #2f2f2f;
 }
+
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
@@ -157,33 +166,28 @@ main {
 }
 
 @media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
   .player {
-    flex: 1 1 100%;
-    padding: 4rem;
-  }
-
-  .score {
-    font-size: 5rem;
-  }
-
-  .name {
-    font-size: 3rem;
-  }
-
-  .current-score {
-    font-size: 2.5rem;
-  }
-
-  .current-label {
-    font-size: 1.4rem;
+    flex: 100%;
+    padding: 4rem 2rem;
   }
 
   .dice {
-    height: 8rem;
+    position: static;
+    margin: 2rem auto;
+    display: block;
   }
 
   .btn {
-    font-size: 1.5rem;
-    padding: 0.5rem 2rem;
+    position: static;
+    margin: 1rem auto;
+    transform: none;
+    width: 80%;
+    max-width: 300px;
   }
 }
