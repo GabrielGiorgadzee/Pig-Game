@@ -28,7 +28,6 @@ main {
   height: 60rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
-  filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
   border-radius: 9px;
   overflow: hidden;
@@ -45,11 +44,9 @@ main {
 }
 
 .name {
-  position: relative;
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  word-spacing: 2px;
   font-weight: 300;
   margin-bottom: 1rem;
 }
@@ -110,7 +107,6 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-  background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   padding: 0.7rem 2.5rem;
@@ -120,7 +116,6 @@ main {
 
 .btn::first-letter {
   font-size: 2.4rem;
-  display: inline-block;
   margin-right: 0.7rem;
 }
 
@@ -152,6 +147,10 @@ main {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
 
+.hidden {
+  display: none;
+}
+
 .player--winner {
   background-color: #2f2f2f;
 }
@@ -159,10 +158,6 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
-}
-
-.hidden {
-  display: none;
 }
 
 @media (max-width: 768px) {
@@ -180,7 +175,7 @@ main {
   .dice {
     position: static;
     margin: 2rem auto;
-    display: block;
+    display: none;
   }
 
   .btn {
@@ -192,11 +187,11 @@ main {
   }
 
   .controls {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
-}
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
 }
