@@ -190,4 +190,13 @@ main {
     width: 80%;
     max-width: 300px;
   }
+
+  .controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
 }
