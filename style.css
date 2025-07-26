@@ -164,3 +164,30 @@ main {
 .hidden {
   display: none;
 }
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .player {
+    flex: 100%;
+    padding: 4rem 2rem;
+  }
+
+  .dice {
+    position: static;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  .btn {
+    position: static;
+    margin: 1rem auto;
+    transform: none;
+    width: 80%;
+    max-width: 300px;
+  }
+}
